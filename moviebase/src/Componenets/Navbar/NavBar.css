@@ -1,0 +1,97 @@
+.NavBar
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: #171414; */
+    background-color: #141414;
+}
+
+.NavBar img
+{
+    width: 100px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+.NavBar ul{
+    display: flex;
+    gap: 40px;
+    flex: 1;
+    list-style: none;
+    text-align: center;
+    margin-left: 1200px;
+    list-style: none;
+}
+
+.NavBar ul li a {
+    position: relative;
+    display: inline-block;
+    margin: 10px 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #e5e5e5;;
+    font-weight: 750;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.NavBar ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background-color: #b81d24; /* neon green */
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.NavBar ul li a:hover::after {
+    width: 100%;
+}
+
+.NavBar ul li a:hover {
+    color: #b81d24;
+}
+
+.ProfileAvatar
+{
+    margin-right: 90px;
+}
+
+
+.ProfileAvatar img
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    padding: 10px;
+    min-width: 150px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.dropdownMenu a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.dropdownMenu a:hover {
+    background-color: #444;
+}
