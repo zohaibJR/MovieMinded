@@ -43,7 +43,7 @@
     position: absolute;
     width: 0%;
     height: 3px;
-    background-color: #b81d24; /* neon green */
+    background-color: #ff0000; /* neon green */
     left: 0;
     bottom: -5px;
     transition: width 0.3s ease;
@@ -54,7 +54,7 @@
 }
 
 .NavBar ul li a:hover {
-    color: #b81d24;
+    color: #ff0000;
 }
 
 .ProfileAvatar

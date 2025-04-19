@@ -5,11 +5,12 @@ import NavBar from './Componenets/Navbar/NavBar';
 import SearchPage from './Pages/Search.jsx';
 import AboutusPage from './Pages/Aboutus.jsx';
 import AdminLogin from "./Pages/AdminLogin.jsx"
+import AdminHome from './Pages/AdminHome.jsx';
 
 // Wrapper component to use hooks like useLocation
 function AppContent() {
   const location = useLocation();
-  const hideNavbarOnPaths = ['/admin']; // Add paths where you want to hide the navbar
+  const hideNavbarOnPaths = ['/admin', '/Adminhome']; // Add paths where you want to hide the navbar
   const shouldShowNavbar = !hideNavbarOnPaths.includes(location.pathname);
 
   return (
@@ -22,6 +23,7 @@ function AppContent() {
 
         {/* ------------ ADMIN ---------------- */}
         <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/Adminhome" element={<AdminHome/>} />
 
     
       </Routes>
