@@ -11,7 +11,7 @@ import AddMovie from "./Pages/AddMovie.jsx"
 // Wrapper component to use hooks like useLocation
 function AppContent() {
   const location = useLocation();
-  const hideNavbarOnPaths = ['/admin', '/Adminhome', '/addmovie']; // Add paths where you want to hide the navbar
+  const hideNavbarOnPaths = ['/admin', '/adminhome', '/addmovie']; // Add paths where you want to hide the navbar
   const shouldShowNavbar = !hideNavbarOnPaths.includes(location.pathname);
 
   return (
@@ -24,7 +24,7 @@ function AppContent() {
 
         {/* ------------ ADMIN ---------------- */}
         <Route path="/admin" element={<AdminLogin />} />
-        <Route path="/Adminhome" element={<AdminHome/>} />
+        <Route path="/adminhome" element={<AdminHome/>} />
         <Route path="/addmovie" element={<AddMovie/>} />
       </Routes>
     </>

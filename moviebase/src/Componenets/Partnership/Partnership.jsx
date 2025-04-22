@@ -2,6 +2,8 @@ import React from 'react'
 import "../Partnership/Partnership.css"
 import NetflixLogo from "../../assets/NetflixLogo.png"
 import AmazonPrime from "../../assets/AmazonPrime.png"
+import DisneyLogo from "../../assets/DisneyLogo.png"
+// import DisneyLogo2 from '../../assets/DisneyLogo2.png'
 
 const Partnership = () => {
   return (
@@ -13,6 +15,8 @@ const Partnership = () => {
       <div className="logos">
         <img src={NetflixLogo} alt="netflix Logo" />
         <img src={AmazonPrime} alt="netflix Logo" />
+        <img src={DisneyLogo} alt="netflix Logo" />
+        {/* <img src={DisneyLogo2} alt="netflix Logo" /> */}
       </div>
     </div>
   )

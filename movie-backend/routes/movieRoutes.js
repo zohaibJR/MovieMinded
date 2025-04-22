@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-const { addMovie } = require('../controllers/movieController');
+const { addMovie, getAllMovies } = require('../controllers/movieController');
 
 // Set up multer for file uploads
 const storage = multer.diskStorage({
@@ -11,5 +11,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.post('/', upload.single('picture'), addMovie);
+router.post('/', upload.single('picture'), addMovie);
+router.get('/', getAllMovies); // <-- this one!
 
 module.exports = router;

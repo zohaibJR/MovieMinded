@@ -6,7 +6,7 @@ const AdminHome = () => {
       const navigate = useNavigate();
       
         const goToAdminHome = () => {
-          navigate('/Adminhome')
+          navigate('/adminhome')
         }
 
   return (

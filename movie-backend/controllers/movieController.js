@@ -15,4 +15,18 @@ const addMovie = async (req, res) => {
   }
 };
 
-module.exports = { addMovie };
+const getAllMovies = async (req, res) => {
+  console.log("📥 GET /api/movies called");
+  try {
+    const movies = await Movie.find();
+    console.log("✅ Movies fetched:", movies.length);
+    res.status(200).json(movies);
+  } catch (error) {
+    console.error("❌ Error fetching movies:", error);
+    res.status(500).json({ message: 'Server error', error });
+  }
+};
+
+
+
+module.exports = { addMovie, getAllMovies }
