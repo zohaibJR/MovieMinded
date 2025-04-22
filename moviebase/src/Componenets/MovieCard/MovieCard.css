@@ -29,11 +29,12 @@
   .movie-title {
     font-size: 1.4rem;
     margin: 0;
+    color: red;
   }
   
   .movie-meta {
     font-size: 0.9rem;
-    color: #ccc;
+    color: #ffffff;
   }
   
   .movie-summary {

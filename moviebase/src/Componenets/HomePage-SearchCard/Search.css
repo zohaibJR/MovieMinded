@@ -13,7 +13,7 @@
 .mainHeading-H1
 {
     position: relative;
-    top: -200px; /* Moves it up by 10px */
+    top: -10px; /* Moves it up by 10px */
     /* border: 5px solid; 
     border-color: rgb(255, 0, 0); */
 }
@@ -32,3 +32,11 @@
     font-size: 40px;
     font-family:'Courier New', Courier, monospace;
 }
+
+.card-row {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  

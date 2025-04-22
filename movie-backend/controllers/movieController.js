@@ -27,6 +27,16 @@ const getAllMovies = async (req, res) => {
   }
 };
 
+const getLatestMovies = async (req, res) => {
+  try {
+    const latestMovies = await Movie.find().sort({ timestamp: -1 }).limit(3);
+    res.status(200).json(latestMovies);
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error });
+  }
+};
 
 
-module.exports = { addMovie, getAllMovies }
+
+module.exports = { addMovie, getAllMovies, getLatestMovies };
+
