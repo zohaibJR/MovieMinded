@@ -13,8 +13,8 @@ const Partnership = () => {
         <h3>Bringing you content from the world’s top platforms</h3>
       </div>
       <div className="logos">
-        <img src={NetflixLogo} alt="netflix Logo" />
         <img src={AmazonPrime} alt="netflix Logo" />
+        <img src={NetflixLogo} alt="netflix Logo" />
         <img src={DisneyLogo} alt="netflix Logo" />
         {/* <img src={DisneyLogo2} alt="netflix Logo" /> */}
       </div>

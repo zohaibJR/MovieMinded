@@ -21,6 +21,8 @@ form {
 }
 
 .leftSide {
+  justify-content: center;
+  align-items: center;
   width: 34%;
   border: 5px solid rgb(255, 0, 0);
 }
@@ -52,6 +54,8 @@ form {
   margin-top: 10px;
 }
 .rightSide {
+  justify-content: center;
+  align-items: center;
   width: 33%;
   border: 5px solid rgb(0, 0, 255);
 }
