@@ -1,8 +1,11 @@
 import React from 'react'
+import SearchPageMain from '../Componenets/SearchPage_Main/SearchPageMain'
 
 const Search = () => {
   return (
-    <div><h1>Search Page</h1></div>
+    <div>
+      <SearchPageMain/>
+    </div>
   )
 }
 
