@@ -7,6 +7,7 @@ import AboutusPage from './Pages/Aboutus.jsx';
 import AdminLogin from "./Pages/AdminLogin.jsx"
 import AdminHome from './Pages/AdminHome.jsx';
 import AddMovie from "./Pages/AddMovie.jsx"
+import TestimonialForm from './Pages/TestimonialForm.jsx';
 
 // Wrapper component to use hooks like useLocation
 function AppContent() {
@@ -26,6 +27,7 @@ function AppContent() {
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/adminhome" element={<AdminHome/>} />
         <Route path="/addmovie" element={<AddMovie/>} />
+        <Route path="/testimonial" element={<TestimonialForm/>} />
       </Routes>
     </>
   );
