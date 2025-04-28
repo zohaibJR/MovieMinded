@@ -1,0 +1,19 @@
+.FooterMain
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background-color: #000000;
+}
+
+.FooterMain h1
+{
+    color: red;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-family:'Courier New', Courier, monospace;
+
+}

@@ -1,12 +1,16 @@
-import React from 'react'
-import SearchPageMain from '../Componenets/SearchPage_Main/SearchPageMain'
+import React, { useState } from 'react';
+import SearchBar from '../Componenets/SearchBar/SearchBar.jsx';
+import MovieDetails from '../Componenets/MovieDetails/MovieDetails.jsx';
 
-const Search = () => {
+const SearchPage = () => {
+  const [selectedMovie, setSelectedMovie] = useState(null);
+
   return (
-    <div>
-      <SearchPageMain/>
+    <div className="search-page">
+      <SearchBar setSelectedMovie={setSelectedMovie} />
+      {selectedMovie && <MovieDetails movie={selectedMovie} />}
     </div>
-  )
-}
+  );
+};
 
-export default Search
+export default SearchPage;

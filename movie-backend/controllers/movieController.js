@@ -36,7 +36,23 @@ const getLatestMovies = async (req, res) => {
   }
 };
 
+const searchMovies = async (req, res) => {
+  const query = req.query.q;
+  if (!query) {
+    return res.status(400).json({ message: 'Missing search query' });
+  }
+
+  const regex = new RegExp(query, 'i');
+  const movies = await Movie.find({ moviename: regex });
+  res.status(200).json(movies);
+};
 
 
-module.exports = { addMovie, getAllMovies, getLatestMovies };
+
+module.exports = {
+  addMovie,
+  getAllMovies,
+  getLatestMovies,
+  searchMovies // ✅ This must be exported
+};
 
