@@ -25,6 +25,7 @@
     color: red;
     font-size: 36px;
     margin-bottom: 20px;
+    font-family:'Courier New', Courier, monospace;
   }
   
   .movie-info p {
@@ -36,6 +37,7 @@
   .movie-info p strong {
     color: red;
     margin-right: 10px;
+    
   }
   
   .movie-info a button {
