@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import "../Navbar/NavBar.css"
 // import Logo from "../../assets/Logo.png"
-import Logo2 from "../../assets/MovieMinded.png"
+// import Logo2 from "../../assets/MovieMinded.png"
+import Logo3 from "../../assets/Logo2Text.png"
 import { Link } from 'react-router-dom'
 
 
@@ -12,7 +13,7 @@ const NavBar = () => {
 
   return (
     <div className='NavBar'>
-        <img src={Logo2} alt="" />
+        <img src={Logo3} alt="" />
 
         <ul>
 

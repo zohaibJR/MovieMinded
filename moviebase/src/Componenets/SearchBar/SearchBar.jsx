@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "../SearchBar/SearchBar.css"
-import Logo2 from "../../assets/MovieMinded.png"
+// import Logo2 from "../../assets/MovieMinded.png"
+import Logo3 from "../../assets/Logo2Text.png"
 
 const SearchBar = ({ setSelectedMovie }) => {
     const [query, setQuery] = useState('');
@@ -33,8 +34,8 @@ const SearchBar = ({ setSelectedMovie }) => {
     };
   return (
     <div className="search-bar-container">
-  <img src={Logo2} alt="logo" />
-  
+  <img src={Logo3} alt="logo" />
+  <h1>Search Movie Here ...</h1>
   <div className="search-input-group">
     <input
       value={query}

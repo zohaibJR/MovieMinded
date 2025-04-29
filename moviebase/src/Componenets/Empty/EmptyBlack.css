@@ -1,0 +1,6 @@
+.empty-black {
+    background-color: black;
+    min-height: 60vh; /* or more, depending on your design */
+    width: 100%;
+  }
+  

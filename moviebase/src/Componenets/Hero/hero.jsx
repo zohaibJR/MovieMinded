@@ -12,7 +12,7 @@ const Hero = () => {
     const navigate = useNavigate();
     
       const goToSearch = () => {
-        navigate('/addData')
+        navigate('/search')
       }
 
   const [currentIndex, setCurrentIndex] = useState(0);
