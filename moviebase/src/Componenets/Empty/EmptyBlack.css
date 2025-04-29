@@ -1,5 +1,5 @@
 .empty-black {
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     min-height: 60vh; /* or more, depending on your design */
     width: 100%;
   }

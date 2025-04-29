@@ -1,5 +1,6 @@
 import React from 'react';
 import './MovieDetails.css';
+import Reviews from '../Reviews/Reviews';
 
 const MovieDetails = ({ movie }) => {
   return (
@@ -16,6 +17,9 @@ const MovieDetails = ({ movie }) => {
           <button>Watch Trailer</button>
         </a>
       </div>
+
+      {/* Reviews section */}
+      <Reviews movieId={movie._id} />
     </div>
   );
 };

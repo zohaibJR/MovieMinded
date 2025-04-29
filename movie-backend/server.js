@@ -4,6 +4,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const movieRoutes = require('./routes/movieRoutes');
 const testimonialRoutes = require('./routes/testimonialRoutes');
+const reviewRoutes = require('./routes/reviewRoutes');
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ app.use('/uploads', express.static('uploads')); // Serve uploaded images
 // Routes
 app.use('/api/movies', movieRoutes);
 app.use('/api/testimonials', testimonialRoutes);
+app.use('/api/movies', reviewRoutes); // Base route for movie-related review actions
 
 app.get('/test', (req, res) => {
   res.send('✅ Server is working!');
