@@ -10,6 +10,7 @@
 
 .FooterMain h2 {
     color: rgb(255, 0, 0);
+    font-size: 18px;
     margin-top: 10px; /* small gap from icons */
     font-family:'Courier New', Courier, monospace;
 }
