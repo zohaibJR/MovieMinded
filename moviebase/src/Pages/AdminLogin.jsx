@@ -1,28 +1,45 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../Pages/Styles/AdminLogin.css';
 
-const AdminHome = () => {
+const AdminLogin = () => {
+  const navigate = useNavigate();
 
-      const navigate = useNavigate();
-      
-        const goToAdminHome = () => {
-          navigate('/adminhome')
-        }
+  const handleLogin = (e) => {
+    e.preventDefault(); // Prevents page reload
+    navigate('/adminhome');
+  };
 
   return (
-    <div className='mainForm'>
-      <h1>Form</h1>
-      <h3>this is admin login</h3>
-      <label htmlFor="">username :- </label>
-      <input type="text" />
-      <br />
-      <br />
-      <label htmlFor="">password :- </label>
-      <input type="text" />
-      <br />
-      <button onClick={goToAdminHome} >asd</button>
-    </div>
-  )
-}
+    <div className='login-page-container'>
+      <div className='login-card'>
+        <div className='login-header'>
+          <h1>Admin Access</h1>
+          <p>Please enter your credentials to manage MovieMinded</p>
+        </div>
+        
+        <form className='login-form' onSubmit={handleLogin}>
+          <div className='input-group'>
+            <label>Username</label>
+            <input type="text" placeholder="Enter username" required />
+          </div>
 
-export default AdminHome
+          <div className='input-group'>
+            <label>Password</label>
+            <input type="password" placeholder="Enter password" required />
+          </div>
+
+          <button type="submit" className='login-btn'>
+            Login to Dashboard
+          </button>
+        </form>
+        
+        <div className='login-footer'>
+          <p>© 2025 MovieMinded Admin Portal</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AdminLogin;

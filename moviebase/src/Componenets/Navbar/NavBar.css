@@ -1,49 +1,48 @@
-.NavBar
-{
+.NavBar {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    /* background-color: #171414; */
+    justify-content: space-between; /* Pushes logo to left, menu to right */
     background-color: #141414;
+    padding: 10px 5%; /* Adds consistent spacing on sides */
+    box-sizing: border-box;
+    position: relative;
+    z-index: 100;
 }
 
-.NavBar img
-{
-    width: 100px;
-    margin-left: 50px;
+.NavBar img {
+    width: 120px;
     cursor: pointer;
 }
 
-.NavBar ul{
+.NavBar ul {
     display: flex;
-    gap: 40px;
-    flex: 1;
+    gap: 20px;
     list-style: none;
-    text-align: center;
-    margin-left: 1200px;
-    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .NavBar ul li a {
     position: relative;
     display: inline-block;
-    margin: 10px 20px;
-    font-size: 25px;
+    padding: 5px 10px;
+    font-size: 1.2rem;
     cursor: pointer;
-    color: #e5e5e5;;
-    font-weight: 750;
+    color: #e5e5e5;
+    font-weight: 700;
     text-decoration: none;
     transition: color 0.3s ease;
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
 }
 
+/* Hover Animation */
 .NavBar ul li a::after {
     content: '';
     position: absolute;
     width: 0%;
     height: 3px;
-    background-color: #ff0000; /* neon green */
+    background-color: #ff0000;
     left: 0;
     bottom: -5px;
     transition: width 0.3s ease;
@@ -57,41 +56,49 @@
     color: #ff0000;
 }
 
-.ProfileAvatar
-{
-    margin-right: 90px;
-}
+/* --- MOBILE RESPONSIVENESS --- */
 
-
-.ProfileAvatar img
-{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
+/* Hamburger Icon Style */
+.menu-icon {
+    display: none; /* Hidden on desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
     cursor: pointer;
 }
 
-.dropdownMenu {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: #2c2c2c;
-    border-radius: 8px;
-    padding: 10px;
-    min-width: 150px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    z-index: 10;
+.menu-icon span {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
 }
 
-.dropdownMenu a {
-    display: block;
-    padding: 10px;
-    color: white;
-    text-decoration: none;
-    transition: background 0.2s ease;
-}
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex; /* Show hamburger on mobile */
+    }
 
-.dropdownMenu a:hover {
-    background-color: #444;
+    .NavBar ul {
+        display: none; /* Hide default horizontal menu */
+        flex-direction: column;
+        width: 100%;
+        background-color: #141414;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        text-align: center;
+        padding: 20px 0;
+        gap: 10px;
+    }
+
+    .NavBar ul.open {
+        display: flex; /* Show menu when hamburger clicked */
+    }
+
+    .NavBar ul li a {
+        font-size: 1.5rem;
+        margin: 10px 0;
+    }
 }

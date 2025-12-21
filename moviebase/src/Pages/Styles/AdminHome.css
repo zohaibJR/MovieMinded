@@ -1,0 +1,65 @@
+.admin-container {
+  padding: 40px 5%;
+  background-color: #000;
+  min-height: 100vh;
+  color: white;
+}
+
+.admin-header-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #222;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.admin-title {
+  font-family: 'Courier New', Courier, monospace;
+  color: #ff0000;
+  font-size: clamp(28px, 5vw, 42px);
+  margin: 0;
+}
+
+.add-movie-btn {
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+}
+
+.add-movie-btn:hover {
+  background-color: #ffffff;
+  color: #ff0000;
+  transform: translateY(-2px);
+}
+
+.movie-grid-layout {
+  display: grid;
+  /* This creates a fluid grid without media queries */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+.no-movies-msg {
+  text-align: center;
+  padding: 100px 0;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .admin-header-box {
+    flex-direction: column;
+    text-align: center;
+  }
+}

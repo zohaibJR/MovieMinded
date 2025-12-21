@@ -1,117 +1,56 @@
-.mainHero
-{
+.mainHero {
     width: 100%;
-    height: 92vh;
+    min-height: 92vh; /* Use min-height so it grows with content */
     display: flex;
+    flex-wrap: wrap; /* Allows stacking */
     justify-content: center;
     align-items: center;
     background-color: #000000;
+    padding: 20px;
 }
 
-.leftside
-{
-    height: 92vh;
-    width: 50%;
-    background-color: #000000;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    /* border: 5px solid; 
-    border-color: rgb(255, 0, 200); */
-}
-
-.rightside
-{
-    display: flex;
+.leftside, .rightside {
     flex: 1;
-    width: 55%;
-    height: 92vh;
-    background-color: #000000;
-    /* border: 5px solid; 
-    border-color: rgb(38, 2, 240); */
-    justify-content: center;
-    align-items: center;
-}
-
-.rightside img
-{
-    width: 700px;
-}
-
-.leftsideContent
-{
+    min-width: 320px; /* Forces wrap on mobile */
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     justify-content: center;
-    /* border: 5px solid; 
-    border-color: rgb(40, 3, 252); */
+    padding: 20px;
 }
 
-
-
-.leftsideContent h1
-{
+.leftsideContent h1 {
     color: #ff0000;
-    font-size: 60px;
+    font-size: clamp(32px, 5vw, 60px); /* Scales font between 32px and 60px */
     text-align: left;
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.1;
 }
 
-.leftsideContent h3
-{
+.leftsideContent h3 {
     color: white;
-    font-size: 30px;
-    text-align: left;
+    font-size: clamp(18px, 3vw, 30px);
     font-weight: 300;
-    font-family:'Courier New', Courier, monospace;
+    margin-top: 20px;
 }
 
-.leftside_Button
-{
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    /* border: 5px solid; 
-    border-color: rgb(40, 3, 252); */
+.rightside img {
+    width: 100%;
+    max-width: 600px; /* Prevents image from being too huge */
+    height: auto;
+    object-fit: contain;
 }
 
-.leftside_Button button{
-    outline: none;
-    cursor: pointer;
-    border: none;
-    padding: 0.9rem 2rem;
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    position: relative;
-    display: inline-block;
-    letter-spacing: 0.05rem;
-    font-weight: 700;
-    font-size: 17px;
-    border-radius: 500px;
-    overflow: hidden;
-    background: #ff0000;
-    color: ghostwhite;
-    width: 200px;
-    height: 60px;
-}
-
-.fade-slide {
-    animation: slideIn 1s ease-in-out;
-    transition: all 0.5s ease-in-out;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(100px);
+/* Mobile Specific Tweaks */
+@media (max-width: 768px) {
+    .mainHero {
+        flex-direction: column-reverse; /* Image on top for mobile */
+        text-align: center;
     }
-    to {
-        opacity: 1;
-        transform: translateX(0);
+    .leftsideContent h1, .leftsideContent h3 {
+        text-align: center;
+    }
+    .leftside_Button {
+        justify-content: center;
+        margin-top: 30px;
     }
 }
-

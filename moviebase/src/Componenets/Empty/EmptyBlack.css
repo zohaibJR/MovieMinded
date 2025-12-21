@@ -1,6 +1,11 @@
+/* EmptyBlack.css */
 .empty-black {
-    background-color: rgb(0, 0, 0);
-    min-height: 60vh; /* or more, depending on your design */
-    width: 100%;
-  }
-  
+  background-color: #000;
+  min-height: 50vh; /* Fills up space below search bar */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000; /* Subtly visible text */
+  font-family: 'Courier New', Courier, monospace;
+}

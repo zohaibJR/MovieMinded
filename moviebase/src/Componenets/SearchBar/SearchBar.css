@@ -1,76 +1,84 @@
+/* SearchBar.css */
 .search-bar-container {
   width: 100%;
-  height: 60vh;
-  background-color: rgb(0, 0, 0);
+  min-height: 50vh; /* Changed from height to min-height */
+  background-color: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.search-bar-container img {
+  width: 100%;
+  max-width: 350px; /* Responsive logo */
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.search-bar-container h1 {
+  font-size: clamp(24px, 5vw, 35px);
+  font-family: 'Courier New', Courier, monospace;
+  color: #ff0000;
+  margin-bottom: 20px;
+}
+
+.search-input-group {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column; /* Stacks button below input on very small screens */
+  align-items: center;
   position: relative;
 }
 
-.search-bar-container img{
-  width: 400px;
-}
-
-.search-bar-container h1
-{
-  font-size: 30px;
-  font-family:'Courier New', Courier, monospace;
-  color: #ff0000;
-}
-
 .search-bar-container input.search-input {
-  padding: 0.75rem 1rem;
+  padding: 12px 20px;
   font-size: 1.1rem;
   border-radius: 5px;
   border: none;
-  width: 500px;
-  margin-right: 10px;
+  width: 100%; /* Uses full width of container */
   outline: none;
+  box-sizing: border-box;
 }
 
 .search-bar-container button {
   background-color: red;
-  color: rgb(255, 255, 255);
+  color: #fff;
   font-weight: bold;
-  padding: 0.75rem 1.5rem;
+  padding: 12px 30px;
   border: none;
-  border-radius: 20px;
+  border-radius: 25px;
   cursor: pointer;
-  font-size: 25px;
-  margin-top: 10px;
-  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
-  width: 200px;
-}
-
-.search-bar-container button:hover {
-  background-color: #c40000;
+  font-size: 20px;
+  margin-top: 15px;
+  transition: 0.3s;
+  width: 100%;
+  max-width: 200px;
 }
 
 .suggestion-list {
   position: absolute;
-  top: calc(50% + 60px);
-  width: 300px;
+  top: 50px; /* Aligns under the input */
+  width: 100%;
   background-color: white;
   border-radius: 5px;
   list-style: none;
   padding: 0;
-  margin-top: 5px;
-  z-index: 10;
-  max-height: 200px;
+  z-index: 100;
+  max-height: 250px;
   overflow-y: auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
 }
 
-.suggestion-list li {
-  padding: 10px;
-  cursor: pointer;
-  border-bottom: 1px solid #ddd;
-  font-size: 1rem;
-}
-
-.suggestion-list li:hover {
-  background-color: #f0f0f0;
+@media (min-width: 768px) {
+  .search-input-group {
+    flex-direction: row;
+    gap: 10px;
+  }
+  .search-bar-container button {
+    margin-top: 0;
+  }
 }

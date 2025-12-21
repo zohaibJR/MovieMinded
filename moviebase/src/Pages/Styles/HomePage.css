@@ -1,8 +1,9 @@
-.body
-{
+/* HomePage.css */
+.body {
     width: 100%;
-    height: 90vh;
+    min-height: 100vh; /* Changed from height to min-height */
     background: linear-gradient(to bottom, #1a1a1a, #000000);
-    color: rgb(252, 14, 14);
+    color: #ff0000;
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden; /* Prevents accidental horizontal scroll */
 }
