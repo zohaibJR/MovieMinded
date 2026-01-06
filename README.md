@@ -49,7 +49,7 @@ Form page where admins can upload new movies.
 Installation & Setup
 
 Clone the repository:
-git clone https://github.com/yourusername/MovieMinded.git
+git clone https://github.com/zohaibJR/MovieMinded
 
 
 Install backend dependencies:
