@@ -1,42 +1,72 @@
-.MainPartnership {
-    width: 100%;
-    min-height: 60vh;
-    padding: 60px 5%;
-    background-color: #000000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* Partnership.css */
+
+.partnership-section {
+  width: 100%;
+  padding: 80px 5%;
+  background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
 }
 
-.headings h1 {
-    text-align: center;
-    color: #ff0000;
-    font-size: clamp(35px, 6vw, 70px);
-    margin-bottom: 10px;
+.partnership-section::before,
+.partnership-section::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+.partnership-section::before { top: 0; }
+.partnership-section::after  { bottom: 0; }
+
+.partnership-inner {
+  max-width: 900px;
+  margin-inline: auto;
+  text-align: center;
 }
 
-.headings h3 {
-    text-align: center;
-    color: #e5e5e5;
-    font-size: clamp(18px, 3vw, 35px);
-    margin-bottom: 40px;
+.partnership-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(30px, 6vw, 80px);
+  flex-wrap: wrap;
+  margin-top: 52px;
 }
 
-.logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
+.partner-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 32px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  min-width: 140px;
 }
 
-.logos img {
-    width: clamp(120px, 20vw, 250px); /* Responsive logo sizing */
-    height: auto;
-    transition: transform 0.3s ease;
+.partner-logo-wrapper:hover {
+  border-color: var(--gold-border);
+  background: var(--gold-dim);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-gold);
 }
 
-.logos img:hover {
-    transform: scale(1.1);
+.partner-logo-wrapper img {
+  height: clamp(28px, 4vw, 44px);
+  width: auto;
+  filter: brightness(0.7) grayscale(0.5);
+  transition: var(--transition);
+}
+
+.partner-logo-wrapper:hover img {
+  filter: brightness(1.1) grayscale(0);
+}
+
+@media (max-width: 600px) {
+  .partnership-section { padding: 60px 5%; }
+  .partnership-logos { gap: 16px; }
+  .partner-logo-wrapper { padding: 16px 24px; min-width: 110px; }
 }

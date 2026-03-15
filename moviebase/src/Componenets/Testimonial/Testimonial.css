@@ -1,39 +1,81 @@
+/* Testimonial.css */
+
 .testimonial-card {
-  width: 45%; /* two cards per row */
+  width: calc(50% - 12px);
   min-width: 300px;
-  background-color: #000;
-  border: 5px solid red;
-  border-radius: 12px;
-  padding: 1.5rem;
-  color: white;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
   display: flex;
-  gap: 1rem;
-  box-sizing: border-box;
+  gap: 18px;
+  align-items: flex-start;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
 }
 
-.testimonial-img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  font-family: var(--font-display);
+  font-size: 8rem;
+  color: var(--gold-dim);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.testimonial-card:hover {
+  border-color: var(--gold-border);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-gold);
+}
+
+.testimonial-avatar {
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  border: 2px solid white;
+  object-fit: cover;
+  border: 2px solid var(--gold-border);
+  flex-shrink: 0;
+  background: var(--bg-glass);
 }
 
-.testimonial-card-content {
+.testimonial-body {
   flex: 1;
 }
 
-.testimonial-card-content p {
-  margin: 0;
-  line-height: 1.6;
-  font-size: 25px;
-  text-align: left;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: bold;
+.testimonial-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 14px;
+  font-style: italic;
 }
 
-.testimonial-card-content .author {
-  margin-top: 0.5rem;
-  color: red;
-  font-weight: bold;
+.testimonial-author {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.testimonial-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 10px;
+}
+
+.star {
+  color: var(--gold);
+  font-size: 0.75rem;
+}
+
+@media (max-width: 700px) {
+  .testimonial-card {
+    width: 100%;
+  }
 }

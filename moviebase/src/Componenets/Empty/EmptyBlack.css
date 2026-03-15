@@ -1,11 +1,32 @@
 /* EmptyBlack.css */
-.empty-black {
-  background-color: #000;
-  min-height: 50vh; /* Fills up space below search bar */
+
+.empty-state {
   width: 100%;
+  min-height: 50vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  color: #000000; /* Subtly visible text */
-  font-family: 'Courier New', Courier, monospace;
+  justify-content: center;
+  background-color: var(--bg-primary);
+  gap: 16px;
+  padding: 60px 20px;
+}
+
+.empty-state-icon {
+  font-size: 3.5rem;
+  opacity: 0.25;
+}
+
+.empty-state-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.empty-state-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 340px;
 }

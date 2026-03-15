@@ -1,84 +1,127 @@
 /* SearchBar.css */
-.search-bar-container {
+
+.searchbar-wrapper {
   width: 100%;
-  min-height: 50vh; /* Changed from height to min-height */
-  background-color: #000;
+  background: var(--bg-primary);
+  padding: 60px 5% 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.search-bar-container img {
-  width: 100%;
-  max-width: 350px; /* Responsive logo */
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.search-bar-container h1 {
-  font-size: clamp(24px, 5vw, 35px);
-  font-family: 'Courier New', Courier, monospace;
-  color: #ff0000;
-  margin-bottom: 20px;
-}
-
-.search-input-group {
-  width: 100%;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column; /* Stacks button below input on very small screens */
-  align-items: center;
+  gap: 28px;
   position: relative;
 }
 
-.search-bar-container input.search-input {
-  padding: 12px 20px;
-  font-size: 1.1rem;
-  border-radius: 5px;
-  border: none;
-  width: 100%; /* Uses full width of container */
-  outline: none;
-  box-sizing: border-box;
+.searchbar-logo {
+  height: 44px;
+  width: auto;
 }
 
-.search-bar-container button {
-  background-color: red;
-  color: #fff;
-  font-weight: bold;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 20px;
-  margin-top: 15px;
-  transition: 0.3s;
+.searchbar-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  font-weight: 900;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.searchbar-heading span {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.searchbar-input-group {
   width: 100%;
-  max-width: 200px;
+  max-width: 640px;
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.searchbar-input {
+  flex: 1;
+  padding: 14px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.searchbar-input::placeholder {
+  color: var(--text-muted);
+}
+
+.searchbar-input:focus {
+  border-color: var(--gold-border);
+  box-shadow: 0 0 0 3px var(--gold-dim);
+  background: var(--bg-secondary);
+}
+
+.searchbar-btn {
+  padding: 14px 28px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: #080808;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  border: none;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.searchbar-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201,168,76,0.35);
 }
 
 .suggestion-list {
   position: absolute;
-  top: 50px; /* Aligns under the input */
-  width: 100%;
-  background-color: white;
-  border-radius: 5px;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-md);
   list-style: none;
-  padding: 0;
-  z-index: 100;
-  max-height: 250px;
+  z-index: 200;
+  max-height: 260px;
   overflow-y: auto;
-  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
+  box-shadow: var(--shadow-md), var(--shadow-gold);
+  animation: fadeIn 0.2s ease;
 }
 
-@media (min-width: 768px) {
-  .search-input-group {
-    flex-direction: row;
-    gap: 10px;
+.suggestion-list li {
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+  border-bottom: 1px solid var(--border);
+}
+
+.suggestion-list li:last-child {
+  border-bottom: none;
+}
+
+.suggestion-list li:hover {
+  background: var(--gold-dim);
+  color: var(--gold-light);
+  padding-left: 28px;
+}
+
+@media (max-width: 560px) {
+  .searchbar-input-group {
+    flex-direction: column;
   }
-  .search-bar-container button {
-    margin-top: 0;
+
+  .searchbar-btn {
+    width: 100%;
+    text-align: center;
   }
 }

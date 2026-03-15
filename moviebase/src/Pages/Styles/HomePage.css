@@ -1,9 +1,9 @@
 /* HomePage.css */
-.body {
-    width: 100%;
-    min-height: 100vh; /* Changed from height to min-height */
-    background: linear-gradient(to bottom, #1a1a1a, #000000);
-    color: #ff0000;
-    font-family: 'Poppins', sans-serif;
-    overflow-x: hidden; /* Prevents accidental horizontal scroll */
+/* The Home page is composed of section components that each carry their own CSS.
+   This file holds any page-level overrides needed. */
+
+.home-page {
+  width: 100%;
+  background-color: var(--bg-primary);
+  overflow-x: hidden;
 }

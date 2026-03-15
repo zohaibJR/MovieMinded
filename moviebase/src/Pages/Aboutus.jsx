@@ -1,12 +1,10 @@
-import React from 'react'
-import AboutusBanner from '../Componenets/AboutUSbanner/AboutusBanner'
+// moviebase/src/Pages/Aboutus.jsx
+
+import React from 'react';
+import AboutusBanner from '../Componenets/AboutUSbanner/AboutusBanner';
 
 const Aboutus = () => {
-  return (
-  <>
-    <AboutusBanner />
-  </>    
-  )
-}
+  return <AboutusBanner />;
+};
 
-export default Aboutus
+export default Aboutus;

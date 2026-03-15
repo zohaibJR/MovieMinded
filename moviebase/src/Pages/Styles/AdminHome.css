@@ -1,65 +1,150 @@
-.admin-container {
-  padding: 40px 5%;
-  background-color: #000;
+/* AdminHome.css */
+
+.admin-page {
+  width: 100%;
   min-height: 100vh;
-  color: white;
+  background-color: var(--bg-primary);
+  padding: 0;
 }
 
-.admin-header-box {
+/* Top bar */
+.admin-topbar {
+  width: 100%;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-gold);
+  padding: 0 5%;
+  height: 64px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 50px;
-  padding-bottom: 20px;
-  border-bottom: 2px solid #222;
-  flex-wrap: wrap;
-  gap: 20px;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.admin-title {
-  font-family: 'Courier New', Courier, monospace;
-  color: #ff0000;
-  font-size: clamp(28px, 5vw, 42px);
-  margin: 0;
+.admin-topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-topbar-brand span {
+  font-size: 1.3rem;
+}
+
+.admin-topbar-brand h1 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.admin-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-logout-btn {
+  padding: 8px 18px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.admin-logout-btn:hover {
+  border-color: rgba(214,48,49,0.4);
+  color: #ff6b6b;
+  background: rgba(214,48,49,0.06);
+}
+
+/* Body */
+.admin-body {
+  padding: 40px 5%;
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
+.admin-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.admin-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 900;
+  color: var(--text-primary);
+}
+
+.admin-movie-count {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  background: var(--bg-glass);
 }
 
 .add-movie-btn {
-  background-color: #ff0000;
-  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: #080808;
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
   border: none;
-  padding: 14px 28px;
-  border-radius: 30px;
-  font-weight: 800;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  box-shadow: 0 4px 16px rgba(201,168,76,0.25);
 }
 
 .add-movie-btn:hover {
-  background-color: #ffffff;
-  color: #ff0000;
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201,168,76,0.4);
 }
 
-.movie-grid-layout {
+/* Grid */
+.admin-movie-grid {
   display: grid;
-  /* This creates a fluid grid without media queries */
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 40px;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 28px;
 }
 
-.no-movies-msg {
+.admin-no-movies {
+  grid-column: 1 / -1;
   text-align: center;
+  padding: 80px 20px;
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.admin-loading {
+  display: flex;
+  justify-content: center;
   padding: 100px 0;
-  color: #666;
-  font-size: 1.2rem;
 }
 
 @media (max-width: 600px) {
-  .admin-header-box {
-    flex-direction: column;
-    text-align: center;
-  }
+  .admin-topbar { height: auto; padding: 14px 5%; flex-wrap: wrap; gap: 10px; }
+  .admin-body   { padding: 28px 5%; }
+  .admin-section-header { flex-direction: column; align-items: flex-start; }
 }

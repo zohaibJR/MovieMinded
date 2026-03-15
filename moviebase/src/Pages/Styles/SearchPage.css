@@ -1,21 +1,9 @@
-.search-page-container {
-    background-color: black;
-    min-height: 100vh;
-    color: white;
-  }
-  
-  .movie-area {
-    background-color: black;
-    padding: 40px;
-    min-height: 50vh; /* adjust based on design */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .placeholder-message {
-    color: gray;
-    font-size: 1.2rem;
-    text-align: center;
-  }
-  
+/* HomePage.css */
+/* The Home page is composed of section components that each carry their own CSS.
+   This file holds any page-level overrides needed. */
+
+.home-page {
+  width: 100%;
+  background-color: var(--bg-primary);
+  overflow-x: hidden;
+}

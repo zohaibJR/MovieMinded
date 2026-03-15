@@ -1,3 +1,5 @@
+// moviebase/src/Componenets/Testimonial/Testimonial.jsx
+
 import React from 'react';
 import './Testimonial.css';
 
@@ -7,15 +9,20 @@ const Testimonial = ({ name, review, picture }) => {
       <img
         src={picture}
         alt={name}
-        className="testimonial-img"
+        className="testimonial-avatar"
         onError={(e) => {
           e.target.onerror = null;
-          e.target.src = '/default-user.png'; // fallback
+          e.target.src = '/default-user.png';
         }}
       />
-      <div className="testimonial-card-content">
-        <p>{review}</p>
-        <p className="author">{name}</p>
+      <div className="testimonial-body">
+        <div className="testimonial-stars">
+          {[...Array(5)].map((_, i) => (
+            <span key={i} className="star">★</span>
+          ))}
+        </div>
+        <p className="testimonial-text">{review}</p>
+        <p className="testimonial-author">— {name}</p>
       </div>
     </div>
   );

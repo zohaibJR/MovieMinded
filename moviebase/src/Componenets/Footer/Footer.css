@@ -1,31 +1,46 @@
-.FooterMain {
-    width: 100%;
-    display: flex;
-    flex-direction: column; /* <== ADD THIS */
-    align-items: center;
-    justify-content: center;
-    height: 150px; /* increased height a bit for space */
-    background-color: #141414;
+/* Footer.css */
+
+.footer {
+  width: 100%;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  padding: 40px 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
-.FooterMain h2 {
-    color: rgb(255, 0, 0);
-    font-size: 18px;
-    margin-top: 10px; /* small gap from icons */
-    font-family:'Courier New', Courier, monospace;
+.footer-icons {
+  display: flex;
+  gap: 16px;
 }
 
-.FooterIcons {
-    display: flex;
-    gap: 50px;
-    justify-content: center;
+.footer-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--text-secondary);
+  background: var(--bg-glass);
+  transition: var(--transition);
 }
 
-.FooterIcons a {
-    color: #ffffff;
-    transition: color 0.3s ease;
+.footer-icon-link:hover {
+  border-color: var(--gold-border);
+  color: var(--gold);
+  background: var(--gold-dim);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-gold);
 }
 
-.FooterIcons a:hover {
-    color: #ff0000;
+.footer-copyright {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
 }
