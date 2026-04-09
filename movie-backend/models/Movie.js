@@ -4,6 +4,7 @@ const movieSchema = new mongoose.Schema({
   moviename: String,
   summary: String,
   youtubeLink: String,
+  ottPlatform: String,
   releaseYear: Number,
   genre: String,
   duration: Number,

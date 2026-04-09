@@ -1,7 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-const { addMovie, getAllMovies, getLatestMovies, searchMovies } = require('../controllers/movieController');
+const {
+  addMovie,
+  getMovieById,
+  getAllMovies,
+  getLatestMovies,
+  searchMovies,
+  updateMovie,
+  deleteMovie
+} = require('../controllers/movieController');
 
 // Set up multer for file uploads
 const storage = multer.diskStorage({
@@ -14,5 +22,8 @@ router.post('/', upload.single('picture'), addMovie);
 router.get('/', getAllMovies);
 router.get('/latest', getLatestMovies); // ✅ NEW ROUTE
 router.get('/search', searchMovies); // ✅ NEW ROUTE
+router.get('/:id', getMovieById);
+router.put('/:id', upload.single('picture'), updateMovie);
+router.delete('/:id', deleteMovie);
 
 module.exports = router;

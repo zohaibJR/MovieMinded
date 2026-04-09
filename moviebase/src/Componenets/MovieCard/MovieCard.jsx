@@ -5,7 +5,7 @@ import './MovieCard.css';
 
 const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, adminActions = null }) => {
   return (
     <div className="movie-card">
       <div className="movie-card-image">
@@ -18,7 +18,7 @@ const MovieCard = ({ movie }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              ▶ Watch Trailer
+              Watch Trailer
             </a>
           )}
         </div>
@@ -32,9 +32,14 @@ const MovieCard = ({ movie }) => {
           {movie.releaseYear && <span className="meta-tag">{movie.releaseYear}</span>}
           {movie.pgRating && <span className="meta-tag gold">PG-{movie.pgRating}</span>}
           {movie.duration && <span className="meta-tag">{movie.duration}m</span>}
+          {movie.ottPlatform && <span className="meta-tag gold">{movie.ottPlatform}</span>}
         </div>
 
         <p className="movie-card-summary">{movie.summary}</p>
+
+        {movie.ottPlatform && (
+          <p className="movie-card-ott">Watch on {movie.ottPlatform}</p>
+        )}
 
         <div className="movie-card-footer">
           {movie.youtubeLink ? (
@@ -44,15 +49,17 @@ const MovieCard = ({ movie }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              ▶ Trailer
+              Trailer
             </a>
           ) : (
             <span />
           )}
           {movie.ageRating ? (
-            <span className="rating-badge">★ {movie.ageRating}</span>
+            <span className="rating-badge">Rating {movie.ageRating}</span>
           ) : null}
         </div>
+
+        {adminActions}
       </div>
     </div>
   );

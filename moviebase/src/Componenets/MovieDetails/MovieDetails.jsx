@@ -56,6 +56,12 @@ const MovieDetails = ({ movie }) => {
                 <p className="detail-item-value">{movie.country}</p>
               </div>
             )}
+            {movie.ottPlatform && (
+              <div className="detail-item">
+                <p className="detail-item-label">OTT</p>
+                <p className="detail-item-value">{movie.ottPlatform}</p>
+              </div>
+            )}
             {movie.language && (
               <div className="detail-item">
                 <p className="detail-item-label">Language</p>

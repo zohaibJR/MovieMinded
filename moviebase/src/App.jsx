@@ -13,11 +13,11 @@ import TestimonialForm from './Pages/TestimonialForm.jsx';
 import ProtectedRoute from './Componenets/ProtectedRoute/ProtectedRoute.jsx';
 
 // Paths where Navbar/Footer are hidden
-const HIDDEN_PATHS = ['/admin', '/adminhome', '/addmovie'];
+const HIDDEN_PATH_PREFIXES = ['/admin', '/adminhome', '/addmovie', '/editmovie'];
 
 function AppContent() {
   const location = useLocation();
-  const hideChrome = HIDDEN_PATHS.includes(location.pathname);
+  const hideChrome = HIDDEN_PATH_PREFIXES.some((path) => location.pathname.startsWith(path));
 
   return (
     <>
@@ -43,6 +43,14 @@ function AppContent() {
         />
         <Route
           path="/addmovie"
+          element={
+            <ProtectedRoute>
+              <AddMovie />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/editmovie/:id"
           element={
             <ProtectedRoute>
               <AddMovie />

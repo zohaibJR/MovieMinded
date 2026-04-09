@@ -10,20 +10,22 @@ const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 const AdminHome = () => {
   const navigate = useNavigate();
-  const [movies, setMovies]   = useState([]);
+  const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [deletingId, setDeletingId] = useState(null);
+
+  const fetchMovies = async () => {
+    try {
+      const res = await axios.get(`${API_BASE}/api/movies`);
+      setMovies(res.data || []);
+    } catch (error) {
+      console.error('Error fetching movies:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        const res = await axios.get(`${API_BASE}/api/movies`);
-        setMovies(res.data || []);
-      } catch (error) {
-        console.error('Error fetching movies:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
     fetchMovies();
   }, []);
 
@@ -32,13 +34,31 @@ const AdminHome = () => {
     navigate('/admin');
   };
 
+  const handleEdit = (movieId) => {
+    navigate(`/editmovie/${movieId}`);
+  };
+
+  const handleDelete = async (movieId, movieName) => {
+    const confirmed = window.confirm(`Delete "${movieName}"? This cannot be undone.`);
+    if (!confirmed) return;
+
+    setDeletingId(movieId);
+    try {
+      await axios.delete(`${API_BASE}/api/movies/${movieId}`);
+      setMovies((currentMovies) => currentMovies.filter((movie) => movie._id !== movieId));
+    } catch (error) {
+      console.error('Error deleting movie:', error);
+      alert('Unable to delete this movie right now.');
+    } finally {
+      setDeletingId(null);
+    }
+  };
+
   return (
     <div className="admin-page">
-
-      {/* Top bar */}
       <header className="admin-topbar">
         <div className="admin-topbar-brand">
-          <span>🎬</span>
+          <span>MM</span>
           <h1>MovieMinded Admin</h1>
         </div>
         <div className="admin-topbar-actions">
@@ -48,7 +68,6 @@ const AdminHome = () => {
         </div>
       </header>
 
-      {/* Body */}
       <main className="admin-body">
         <div className="admin-section-header">
           <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
@@ -70,11 +89,33 @@ const AdminHome = () => {
           <div className="admin-movie-grid">
             {movies.length > 0 ? (
               movies.map((movie) => (
-                <MovieCard key={movie._id} movie={movie} />
+                <MovieCard
+                  key={movie._id}
+                  movie={movie}
+                  adminActions={
+                    <div className="admin-card-actions">
+                      <button
+                        type="button"
+                        className="admin-card-btn"
+                        onClick={() => handleEdit(movie._id)}
+                      >
+                        Edit
+                      </button>
+                      <button
+                        type="button"
+                        className="admin-card-btn danger"
+                        onClick={() => handleDelete(movie._id, movie.moviename)}
+                        disabled={deletingId === movie._id}
+                      >
+                        {deletingId === movie._id ? 'Deleting...' : 'Delete'}
+                      </button>
+                    </div>
+                  }
+                />
               ))
             ) : (
               <p className="admin-no-movies">
-                No movies yet — start by adding one.
+                No movies yet - start by adding one.
               </p>
             )}
           </div>
